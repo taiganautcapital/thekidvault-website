@@ -15,7 +15,7 @@ export const FEEDBACK_URL = "https://docs.google.com/forms/d/e/1FAIpQLSckyfLCUDF
 export const CONTACT_EMAIL = "contact@thekidvault.com";
 
 // GA4 Measurement ID — replace with your actual ID
-export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "";
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
 
 export const VOCAB: Record<string, string> = {
   "bartering": "Trading goods directly without using money — like swapping your sandwich for someone's chips.",
