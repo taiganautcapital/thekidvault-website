@@ -122,17 +122,23 @@ const Home: NextPage = () => {
           <h2 style={{ fontSize: "clamp(22px,4vw,30px)", margin: "0 0 12px", fontWeight: 700, fontFamily: "Georgia,serif", color: C.navy }}>Join families learning money together</h2>
           <p style={{ fontSize: 15, color: C.textLight, lineHeight: 1.7, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 24 }}>Get free weekly tips on teaching kids about money — straight to your inbox.</p>
           
-          <div style={{ maxWidth: 480, margin: "0 auto" }} dangerouslySetInnerHTML={{ __html: `
-          <style>
-            .formkit-form[data-uid="e03a54b413"] .formkit-fields { display: flex !important; flex-direction: row !important; gap: 8px !important; flex-wrap: nowrap !important; }
-            .formkit-form[data-uid="e03a54b413"] .formkit-field { flex: 1 1 auto !important; margin: 0 !important; }
-            .formkit-form[data-uid="e03a54b413"] .formkit-submit { flex: 0 0 auto !important; margin: 0 !important; border-radius: 50px !important; border: none !important; }
-            .formkit-form[data-uid="e03a54b413"] .formkit-input { border-radius: 50px !important; padding: 14px 20px !important; font-size: 15px !important; border: 2px solid #E8E0D0 !important; width: 100% !important; }
-            .formkit-form[data-uid="e03a54b413"] .formkit-submit > span { padding: 14px 24px !important; font-size: 15px !important; }
-            .formkit-form[data-uid="e03a54b413"] .formkit-powered-by-convertkit-container { justify-content: center !important; margin-top: 8px !important; }
-          </style>
-          <form action="https://app.kit.com/forms/9107917/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9107917" data-uid="e03a54b413" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color:rgb(0,0,0);border-color:rgb(227,227,227);border-radius:50px;font-weight:400;"></div><button data-element="submit" class="formkit-submit" style="color:rgb(255,255,255);background-color:rgb(212,168,67);border-radius:50px;font-weight:700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Get Free Tips →</span></button></div></div></form>
-`       }} />
+          <form
+            action="https://app.kit.com/forms/9107917/subscriptions"
+            method="post"
+            target="_blank"
+            style={{ maxWidth: 480, margin: "0 auto", display: "flex", gap: 8, flexWrap: "wrap" }}
+          >
+            <input
+              type="email"
+              name="email_address"
+              placeholder="Email Address"
+              required
+              style={{ flex: "1 1 auto", padding: "14px 20px", borderRadius: 50, border: `2px solid ${C.border}`, fontSize: 15, fontFamily: "'Trebuchet MS',sans-serif", outline: "none", minWidth: 0 }}
+            />
+            <button type="submit" style={{ ...btnS(C.gold, C.navy, { padding: "14px 24px", flexShrink: 0 }) }}>
+              Get Free Tips →
+            </button>
+          </form>
         </section>
         
         <div style={{ maxWidth: 100, height: 3, background: `linear-gradient(90deg,transparent,${C.gold},transparent)`, margin: "0 auto 60px", borderRadius: 2 }} />
@@ -215,8 +221,7 @@ const Home: NextPage = () => {
       </div>
 
       <FeedbackButton url={FEEDBACK_URL} />
-            <Script src="https://f.convertkit.com/ckjs/ck.5.js" strategy="afterInteractive" />
-    </>
+      </>
   );
 };
 
