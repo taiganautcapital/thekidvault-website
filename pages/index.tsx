@@ -26,16 +26,46 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>The Kid Vault – Financial Education for Young Minds</title>
-        <meta name="description" content="The Kid Vault – Free interactive financial education for kids ages 6-12. Learn about money, saving, and investing through fun lessons, quizzes, and activities." />
-        <meta name="keywords" content="financial literacy for kids, money education, kids investing, teaching kids about money, 4 bucket savings method kids, compound interest for kids" />
-        <meta property="og:title" content="The Kid Vault – Financial Education for Young Minds" />
-        <meta property="og:description" content="A free, interactive guide to money, saving, and investing – built by kids, for kids." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.thekidvault.com" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-      </Head>
+  <title>The Kid Vault – Free Financial Education for Kids Ages 6-12</title>
+  <meta name="description" content="Free interactive financial literacy for kids ages 6-12. Learn money basics, the 4 bucket savings method, compound interest, and investing through fun lessons and activities." />
+  <meta name="keywords" content="financial literacy for kids, money education, kids investing, teaching kids about money, 4 bucket savings method kids, compound interest for kids" />
+  <link rel="canonical" href="https://www.thekidvault.com" />
+
+  {/* Open Graph */}
+  <meta property="og:title" content="The Kid Vault – Free Financial Education for Kids Ages 6-12" />
+  <meta property="og:description" content="Free interactive financial literacy for kids ages 6-12. Learn money basics, saving, compound interest, and investing through fun lessons and activities." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.thekidvault.com" />
+  <meta property="og:site_name" content="The Kid Vault" />
+  <meta property="og:image" content="https://www.thekidvault.com/og-image.png" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Kid Vault – Free Financial Education for Kids Ages 6-12" />
+  <meta name="twitter:description" content="Free interactive financial literacy for kids ages 6-12. Learn money basics, saving, compound interest, and investing through fun lessons and activities." />
+  <meta name="twitter:image" content="https://www.thekidvault.com/og-image.png" />
+
+  {/* Structured Data */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "The Kid Vault",
+      "url": "https://www.thekidvault.com",
+      "description": "Free interactive financial literacy for kids ages 6-12.",
+      "teaches": "Financial literacy, saving, investing, budgeting",
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student",
+        "audienceType": "Children ages 6-12"
+      }
+    })}}
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</Head>
 
       <div style={{ background: C.cream }}>
         {/* HERO */}
