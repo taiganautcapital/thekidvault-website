@@ -126,7 +126,7 @@ const Home: NextPage = () => {
           <style>
             .formkit-form[data-uid="e03a54b413"] .formkit-fields { display: flex !important; flex-direction: row !important; gap: 8px !important; flex-wrap: nowrap !important; }
             .formkit-form[data-uid="e03a54b413"] .formkit-field { flex: 1 1 auto !important; margin: 0 !important; }
-            .formkit-form[data-uid="e03a54b413"] .formkit-submit { flex: 0 0 auto !important; margin: 0 !important; border-radius: 50px !important; }
+            .formkit-form[data-uid="e03a54b413"] .formkit-submit { flex: 0 0 auto !important; margin: 0 !important; border-radius: 50px !important; border: none !important; }
             .formkit-form[data-uid="e03a54b413"] .formkit-input { border-radius: 50px !important; padding: 14px 20px !important; font-size: 15px !important; border: 2px solid #E8E0D0 !important; width: 100% !important; }
             .formkit-form[data-uid="e03a54b413"] .formkit-submit > span { padding: 14px 24px !important; font-size: 15px !important; }
             .formkit-form[data-uid="e03a54b413"] .formkit-powered-by-convertkit-container { justify-content: center !important; margin-top: 8px !important; }
