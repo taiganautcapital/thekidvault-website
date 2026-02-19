@@ -125,7 +125,6 @@ const Home: NextPage = () => {
           <form
             action="https://app.kit.com/forms/9107917/subscriptions"
             method="post"
-            target="_blank"
             style={{ maxWidth: 480, margin: "0 auto", display: "flex", gap: 8, flexWrap: "wrap" }}
           >
             <input
