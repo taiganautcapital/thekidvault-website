@@ -63,6 +63,7 @@ const Home: NextPage = () => {
     })}}
   />
 
+  <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 </Head>
@@ -115,6 +116,14 @@ const Home: NextPage = () => {
         </section>
         <div style={{ maxWidth: 100, height: 3, background: `linear-gradient(90deg,transparent,${C.gold},transparent)`, margin: "20px auto 40px", borderRadius: 2 }} />
 
+        {/* EMAIL CAPTURE */}
+        <section style={{ maxWidth: 600, margin: "0 auto", padding: "0 24px 60px", textAlign: "center" }}>
+          <div style={{ fontSize: 13, color: C.gold, textTransform: "uppercase", letterSpacing: 3, marginBottom: 12, fontFamily: "'Trebuchet MS',sans-serif", fontWeight: 600 }}>Free Parent Tips</div>
+          <h2 style={{ fontSize: "clamp(22px,4vw,30px)", margin: "0 0 12px", fontWeight: 700, fontFamily: "Georgia,serif", color: C.navy }}>Join families learning money together</h2>
+          <p style={{ fontSize: 15, color: C.textLight, lineHeight: 1.7, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 24 }}>Get free weekly tips on teaching kids about money — straight to your inbox.</p>
+          <div dangerouslySetInnerHTML={{ __html: `<form action="https://app.kit.com/forms/9107917/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9107917" data-uid="e03a54b413" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color:rgb(0,0,0);border-color:rgb(227,227,227);border-radius:4px;font-weight:400;"></div><button data-element="submit" class="formkit-submit" style="color:rgb(255,255,255);background-color:rgb(212,168,67);border-radius:4px;font-weight:700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Get Free Tips →</span></button></div></div></form>` }} />
+        </section>
+        
         {/* CHAPTERS */}
         <section style={{ maxWidth: 900, margin: "0 auto", padding: "20px 24px 60px" }}>
           <div style={{ textAlign: "center", marginBottom: 40 }}>
