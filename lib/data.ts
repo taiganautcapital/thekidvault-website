@@ -69,6 +69,8 @@ export interface Chapter {
   icon: string;
   c: string;
   d: string;
+  seoTitle: string;
+  seoDesc: string;
   lessons: Lesson[];
   quiz: QuizQuestion[];
   act: { type: string; t: string; d: string };
