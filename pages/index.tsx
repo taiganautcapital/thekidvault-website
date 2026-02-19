@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { C, FEEDBACK_URL, CH } from "@/lib/data";
 import { Logo, btnS, FeedbackButton } from "@/components/ui";
 import { gaEvent } from "@/lib/data";
+import Script from "next/script";
 
 const Home: NextPage = () => {
   const router = useRouter();
@@ -63,7 +64,6 @@ const Home: NextPage = () => {
     })}}
   />
 
-  <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 </Head>
@@ -215,6 +215,7 @@ const Home: NextPage = () => {
       </div>
 
       <FeedbackButton url={FEEDBACK_URL} />
+            <Script src="https://f.convertkit.com/ckjs/ck.5.js" strategy="afterInteractive" />
     </>
   );
 };
