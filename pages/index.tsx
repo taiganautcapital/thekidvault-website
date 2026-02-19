@@ -125,6 +125,15 @@ const Home: NextPage = () => {
           <form
             action="https://app.kit.com/forms/9107917/subscriptions"
             method="post"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const data = new FormData(e.currentTarget);
+              fetch("https://app.kit.com/forms/9107917/subscriptions", { method: "POST", body: data, mode: "no-cors" })
+                .then(() => {
+                  (e.target as HTMLFormElement).reset();
+                  alert("You're in! 🎉 Check your inbox to confirm.");
+                });
+            }}
             style={{ maxWidth: 480, margin: "0 auto", display: "flex", gap: 8, flexWrap: "wrap" }}
           >
             <input
