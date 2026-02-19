@@ -90,9 +90,29 @@ const ChapterPage: NextPage<Props> = ({ chapterIndex }) => {
     }
   }, [hydrated, activeProfile, router, chapterIndex]);
 
-  if (!hydrated || !activeProfile) return null;
-
   const ch = CH[chapterIndex];
+
+if (!hydrated || !activeProfile) return (
+  <>
+    <Head>
+      <title>{ch.seoTitle}</title>
+      <meta name="description" content={ch.seoDesc} />
+      <link rel="canonical" href={`https://www.thekidvault.com/chapter/${ch.id}`} />
+      <meta property="og:title" content={ch.seoTitle} />
+      <meta property="og:description" content={ch.seoDesc} />
+      <meta property="og:url" content={`https://www.thekidvault.com/chapter/${ch.id}`} />
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="The Kid Vault" />
+      <meta property="og:image" content="https://www.thekidvault.com/og-image.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={ch.seoTitle} />
+      <meta name="twitter:description" content={ch.seoDesc} />
+      <meta name="twitter:image" content="https://www.thekidvault.com/og-image.png" />
+    </Head>
+    <div />
+  </>
+);
+
   const stars = activeProfile.stars;
   const earnedStars = Object.keys(stars).length;
   const les = ch.lessons[lesIdx];
@@ -144,10 +164,47 @@ const ChapterPage: NextPage<Props> = ({ chapterIndex }) => {
   return (
     <>
       <Head>
-        <title>Ch. {ch.id}: {ch.t} – The Kid Vault</title>
-        <meta name="description" content={`Learn about ${ch.t} in The Kid Vault's free financial literacy course for kids.`} />
-        <meta property="og:title" content={`${ch.t} – The Kid Vault`} />
-      </Head>
+  <title>{ch.seoTitle}</title>
+  <meta name="description" content={ch.seoDesc} />
+  <link rel="canonical" href={`https://www.thekidvault.com/chapter/${ch.id}`} />
+
+  {/* Open Graph */}
+  <meta property="og:title" content={ch.seoTitle} />
+  <meta property="og:description" content={ch.seoDesc} />
+  <meta property="og:url" content={`https://www.thekidvault.com/chapter/${ch.id}`} />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="The Kid Vault" />
+  <meta property="og:image" content="https://www.thekidvault.com/og-image.png" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={ch.seoTitle} />
+  <meta name="twitter:description" content={ch.seoDesc} />
+  <meta name="twitter:image" content="https://www.thekidvault.com/og-image.png" />
+
+  {/* Structured Data */}
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": ch.seoTitle,
+      "description": ch.seoDesc,
+      "url": `https://www.thekidvault.com/chapter/${ch.id}`,
+      "provider": {
+        "@type": "Organization",
+        "name": "The Kid Vault",
+        "url": "https://www.thekidvault.com"
+      },
+      "educationalLevel": "Elementary",
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student",
+        "audienceType": "Children ages 6-12"
+      }
+    })}}
+  />
+</Head>
       <div style={{ minHeight: "100vh", background: C.cream, fontFamily: "Georgia,serif", color: C.navy }}>
         {sideNav && <div onClick={() => setSideNav(false)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,0.4)", zIndex: 150 }} />}
         <LessonNav
