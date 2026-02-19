@@ -135,6 +135,7 @@ const Home: NextPage = () => {
 `       }} />
         </section>
         
+        <div style={{ maxWidth: 100, height: 3, background: `linear-gradient(90deg,transparent,${C.gold},transparent)`, margin: "0 auto 60px", borderRadius: 2 }} />
         {/* CHAPTERS */}
         <section style={{ maxWidth: 900, margin: "0 auto", padding: "20px 24px 60px" }}>
           <div style={{ textAlign: "center", marginBottom: 40 }}>
