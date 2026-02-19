@@ -121,7 +121,18 @@ const Home: NextPage = () => {
           <div style={{ fontSize: 13, color: C.gold, textTransform: "uppercase", letterSpacing: 3, marginBottom: 12, fontFamily: "'Trebuchet MS',sans-serif", fontWeight: 600 }}>Free Parent Tips</div>
           <h2 style={{ fontSize: "clamp(22px,4vw,30px)", margin: "0 0 12px", fontWeight: 700, fontFamily: "Georgia,serif", color: C.navy }}>Join families learning money together</h2>
           <p style={{ fontSize: 15, color: C.textLight, lineHeight: 1.7, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 24 }}>Get free weekly tips on teaching kids about money — straight to your inbox.</p>
-          <div dangerouslySetInnerHTML={{ __html: `<form action="https://app.kit.com/forms/9107917/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9107917" data-uid="e03a54b413" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color:rgb(0,0,0);border-color:rgb(227,227,227);border-radius:4px;font-weight:400;"></div><button data-element="submit" class="formkit-submit" style="color:rgb(255,255,255);background-color:rgb(212,168,67);border-radius:4px;font-weight:700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Get Free Tips →</span></button></div></div></form>` }} />
+          
+          <div style={{ maxWidth: 480, margin: "0 auto" }} dangerouslySetInnerHTML={{ __html: `
+          <style>
+            .formkit-form[data-uid="e03a54b413"] .formkit-fields { display: flex !important; flex-direction: row !important; gap: 8px !important; flex-wrap: nowrap !important; }
+            .formkit-form[data-uid="e03a54b413"] .formkit-field { flex: 1 1 auto !important; margin: 0 !important; }
+            .formkit-form[data-uid="e03a54b413"] .formkit-submit { flex: 0 0 auto !important; margin: 0 !important; border-radius: 50px !important; }
+            .formkit-form[data-uid="e03a54b413"] .formkit-input { border-radius: 50px !important; padding: 14px 20px !important; font-size: 15px !important; border: 2px solid #E8E0D0 !important; width: 100% !important; }
+            .formkit-form[data-uid="e03a54b413"] .formkit-submit > span { padding: 14px 24px !important; font-size: 15px !important; }
+            .formkit-form[data-uid="e03a54b413"] .formkit-powered-by-convertkit-container { justify-content: center !important; margin-top: 8px !important; }
+          </style>
+          <form action="https://app.kit.com/forms/9107917/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9107917" data-uid="e03a54b413" data-format="inline" data-version="5" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color:rgb(0,0,0);border-color:rgb(227,227,227);border-radius:50px;font-weight:400;"></div><button data-element="submit" class="formkit-submit" style="color:rgb(255,255,255);background-color:rgb(212,168,67);border-radius:50px;font-weight:700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span>Get Free Tips →</span></button></div></div></form>
+`       }} />
         </section>
         
         {/* CHAPTERS */}
