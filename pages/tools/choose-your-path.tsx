@@ -250,8 +250,7 @@ const STORIES: Story[] = [
           emoji: "🧱",
           message: "You spent on something you really wanted AND kept a little back. The LEGO set delivers joy for weeks. That's a great use of birthday money!",
           moneyLesson: "Spending on things that bring lasting joy is smart. Even keeping a tiny amount back is a good habit — it adds up over time!",
-          coinsLost: 48,
-          coinsGained: 2,
+          coinsLost: 49,
           math: {
             formula: "Starting Amount − Purchase (with tax) = Remaining",
             steps: [
@@ -285,7 +284,7 @@ const STORIES: Story[] = [
           emoji: "🤑",
           message: "Saving all $50 was disciplined and powerful. Compound interest means your money makes money. By 18, consistent saving like this adds up to thousands!",
           moneyLesson: "Saving everything is great — but balance matters too. The best habit is saving MOST and spending a little. You nailed the saving part!",
-          coinsGained: 50,
+          coinsGained: 2,
           math: {
             formula: "Principal × (1 + Interest Rate) = End Balance",
             steps: [
@@ -311,7 +310,7 @@ const STORIES: Story[] = [
           emoji: "🏆",
           message: "You saved AND had fun. This is the 4-Bucket Plan in real life — save some, spend some, grow some. You made memories AND built your savings. Perfect balance!",
           moneyLesson: "The 40/30/20/10 rule works because it honors both needs: saving for the future AND enjoying today. You instinctively found the balance — that's rare!",
-          coinsGained: 30,
+          coinsLost: 19,
           math: {
             formula: "Saved Amount × (1 + Interest Rate) = End Balance",
             steps: [
@@ -418,8 +417,7 @@ const STORIES: Story[] = [
           emoji: "✨",
           message: "You spent $35 but got $65+ in value back! Trading cards can be investments when you know the market. You also had an amazing night. Smart AND fun!",
           moneyLesson: "Some 'spending' is actually investing! Collectibles, limited editions, and things that hold value can grow. The key: research before buying, not every pack pays off!",
-          coinsLost: 35,
-          coinsGained: 65,
+          coinsLost: 45,
           math: {
             formula: "ROI = (Value Gained − Amount Spent) ÷ Amount Spent × 100",
             steps: [
@@ -445,8 +443,7 @@ const STORIES: Story[] = [
           emoji: "⏳",
           message: "You resisted two temptations in one day — kept gaming AND skipped the impulse buy. Then you bought smarter when the price dropped. That's next-level money skill!",
           moneyLesson: "Impulse buys cost more than planned ones. Waiting just 24-48 hours before big purchases saves money AND reduces buyer's remorse. Patience is literally profitable!",
-          coinsLost: 10,
-          coinsGained: 30,
+          coinsLost: 35,
           math: {
             formula: "Savings = Impulse Price − Sale Price",
             steps: [
@@ -472,7 +469,6 @@ const STORIES: Story[] = [
           message: "Books are one of the highest-ROI purchases ever. $10 bought you hours of entertainment AND new skills. You're already drawing manga! That skill could earn money someday.",
           moneyLesson: "Investing in your brain always pays dividends. Skills you learn from books can eventually earn you way more than the books cost. Knowledge compounds just like interest!",
           coinsLost: 10,
-          coinsGained: 40,
           math: {
             formula: "Cost per Book = Total Spent ÷ Number of Books",
             steps: [
@@ -756,7 +752,6 @@ const STORIES: Story[] = [
           emoji: "😅",
           message: "You got the game AND extra cash! But selling a $150 tablet for $40 was a $110 loss. And now school is harder without it. The game was worth it — the tablet sale wasn't.",
           moneyLesson: "Before selling something, ask: 'Will I need this later?' Selling at a steep discount to fund something short-term often costs more in the long run. Patience > panic selling!",
-          coinsLost: 35,
           coinsGained: 3,
           math: {
             formula: "Depreciation Loss = Original Price − Resale Price",
@@ -795,7 +790,6 @@ const STORIES: Story[] = [
           message: "You only borrowed what you needed, paid it back immediately, and made a memory with your sibling. Responsible borrowing + family bonding = perfect outcome!",
           moneyLesson: "Good debt is small, purposeful, and paid back fast. Bad debt is large and lingers. You borrowed $1 and paid it back in 2 days — that's exactly how borrowing should work!",
           coinsLost: 35,
-          coinsGained: 24,
           math: {
             formula: "Total Cost = Purchase Price + Interest on Debt",
             steps: [
@@ -821,8 +815,7 @@ const STORIES: Story[] = [
           emoji: "🔍",
           message: "Resourcefulness! You found money you already had. This is why tracking your money matters — you had $1 hiding all along. Imagine if you'd borrowed $25 you didn't need!",
           moneyLesson: "Track your money! Most people have more than they think, hiding in pockets and drawers. A simple money tracker app or jar system shows you exactly what you have.",
-          coinsLost: 35,
-          coinsGained: 25,
+          coinsLost: 34,
           math: {
             formula: "Total Found = Count Each Coin × Its Value",
             steps: [
@@ -859,8 +852,7 @@ const STORIES: Story[] = [
           emoji: "🏆",
           message: "You made a deal and kept it. That's character. Your parents trust you more now, which is worth more than any amount of money. AND you got the game. Total win!",
           moneyLesson: "Keeping financial promises builds your reputation. Adults who keep their word get better loan rates, promotions, and opportunities. It starts with small promises like this!",
-          coinsLost: 0,
-          coinsGained: 35,
+          coinsLost: 35,
           math: {
             formula: "Hourly Wage = Advance ÷ Hours of Chores Worked",
             steps: [
@@ -886,7 +878,7 @@ const STORIES: Story[] = [
           emoji: "😬",
           message: "You got the game but lost your parents' trust and now owe 4 weeks of chores. The interest on your broken promise is higher than the original debt!",
           moneyLesson: "Breaking financial agreements has compounding consequences — just like interest. The cost of not paying your debts is always higher than the original amount. Trust is expensive to rebuild!",
-          coinsLost: 25,
+          coinsLost: 35,
           math: {
             formula: "Penalty = Original Debt × Multiplier for Breaking Agreement",
             steps: [
@@ -912,7 +904,7 @@ const STORIES: Story[] = [
           emoji: "⏳",
           message: "Waiting saved you $15! You bought the same game for 25% less. And you still have $15 left over. Being patient with purchases is one of the most profitable money habits!",
           moneyLesson: "New game/product prices almost always drop within 4-8 weeks of launch. Waiting is a strategy. FOMO (fear of missing out) costs real money — patience earns it back!",
-          coinsGained: 15,
+          coinsLost: 20,
           math: {
             formula: "Discount % = (Original Price − Sale Price) ÷ Original Price × 100",
             steps: [
@@ -948,8 +940,7 @@ const STORIES: Story[] = [
           emoji: "❤️",
           message: "You didn't just ask for money — you EARNED it by creating real value for Grandma. And you discovered you enjoy teaching! That skill could become a real income source.",
           moneyLesson: "The best money comes from solving real problems for real people. You solved Grandma's tech problem, she solved your money problem. That's how every business works!",
-          coinsLost: 0,
-          coinsGained: 60,
+          coinsLost: 35,
           math: {
             formula: "Hourly Rate = Total Earned ÷ Hours Worked",
             steps: [
@@ -975,7 +966,7 @@ const STORIES: Story[] = [
           emoji: "🏆",
           message: "Earned $25, saved it, bought the game cheaper, AND had ice cream money left. This is textbook perfect money management. You're basically a financial genius!",
           moneyLesson: "Earn → Save → Wait for the right price → Spend with leftover. That cycle, repeated for life, is literally how wealth is built. You just ran the full loop!",
-          coinsGained: 75,
+          coinsLost: 20,
           math: {
             formula: "Total Savings = Earned + Saved − Spent + Leftover",
             steps: [
@@ -1016,18 +1007,31 @@ const ChooseYourPathPage: NextPage = () => {
   };
 
   const makeChoice = (nextId: string) => {
-    if (animating) return;
+    if (animating || !activeStory) return;
     setAnimating(true);
     setHistory(h => [...h, currentNodeId]);
     setTimeout(() => {
       setCurrentNodeId(nextId);
+      // Update balance if destination node has an outcome
+      const nextNode = activeStory.nodes[nextId];
+      if (nextNode?.outcome) {
+        const gained = nextNode.outcome.coinsGained ?? 0;
+        const lost = nextNode.outcome.coinsLost ?? 0;
+        setCoins(c => c + gained - lost);
+      }
       setAnimating(false);
     }, 300);
   };
 
   const goBack = () => {
-    if (history.length === 0) return;
+    if (history.length === 0 || !activeStory) return;
     const prev = history[history.length - 1];
+    // Reverse coin change if going back from an outcome node
+    if (currentNode?.outcome) {
+      const gained = currentNode.outcome.coinsGained ?? 0;
+      const lost = currentNode.outcome.coinsLost ?? 0;
+      setCoins(c => c - gained + lost);
+    }
     setHistory(h => h.slice(0, -1));
     setCurrentNodeId(prev);
   };
