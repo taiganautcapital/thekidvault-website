@@ -82,12 +82,22 @@ function MathTip({ math, badgeColor }: { math: MathBreakdown; badgeColor: string
       </button>
 
       {open && (
+        <span
+          onClick={(e) => { if (e.target === e.currentTarget) { setOpen(false); setExpanded(false); } }}
+          style={{
+            position: "fixed", inset: 0, background: "rgba(0,0,0,0.5)",
+            zIndex: 9998, display: "block",
+          }}
+        />
+      )}
+      {open && (
         <span style={{
-          position: "absolute", bottom: "calc(100% + 10px)", left: "50%",
-          transform: "translateX(-50%)",
+          position: "fixed",
+          top: "50%", left: "50%",
+          transform: "translate(-50%, -50%)",
           background: "#1a2332", borderRadius: 14, padding: "16px 18px",
-          width: "min(300px, 88vw)", zIndex: 999,
-          boxShadow: "0 8px 32px rgba(0,0,0,0.35)",
+          width: "min(320px, 90vw)", zIndex: 9999,
+          boxShadow: "0 8px 40px rgba(0,0,0,0.5)",
           display: "block",
           border: `1px solid ${badgeColor}40`,
         }}>
@@ -156,13 +166,17 @@ function MathTip({ math, badgeColor }: { math: MathBreakdown; badgeColor: string
             </span>
           )}
 
-          {/* Caret */}
-          <span style={{
-            position: "absolute", bottom: -6, left: "50%", transform: "translateX(-50%)",
-            width: 0, height: 0,
-            borderLeft: "6px solid transparent", borderRight: "6px solid transparent",
-            borderTop: `6px solid #1a2332`,
-          }} />
+          {/* Close button */}
+          <button
+            onClick={(e) => { e.stopPropagation(); setOpen(false); setExpanded(false); }}
+            style={{
+              position: "absolute", top: 10, right: 10,
+              background: "rgba(255,255,255,0.1)", border: "none", borderRadius: "50%",
+              width: 24, height: 24, cursor: "pointer", color: "rgba(255,255,255,0.6)",
+              fontSize: 14, display: "flex", alignItems: "center", justifyContent: "center",
+              fontFamily: "'Trebuchet MS',sans-serif",
+            }}
+          >✕</button>
         </span>
       )}
     </span>
