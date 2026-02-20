@@ -252,10 +252,11 @@ const Home: NextPage = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+                </div>{/* end tools-inner */}
+              </div>{/* end tools card */}
 
-            </div>
-          </div>
+            </div>{/* end feat-row2 */}
+          </div>{/* end inner container */}
         </section>
 
         {/* CTA */}
