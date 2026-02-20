@@ -113,16 +113,27 @@ const DragDropBudgeter: NextPage = () => {
   const [hasTracked, setHasTracked] = useState(false);
   const nextId = useRef(0);
 
-  // Build coins from total amount using largest denominations
+  // Build coins with good denomination variety for each preset amount
   const buildCoins = (amount: number): Coin[] => {
     const result: Coin[] = [];
-    let remaining = amount;
-    // Use $10, $5, $1 coins
-    for (const denom of [10, 5, 1]) {
-      while (remaining >= denom) {
-        result.push({ id: nextId.current++, value: denom, bucketId: null });
-        remaining -= denom;
-      }
+    // Hand-crafted sets: enough coins to split meaningfully, splits cleanly into 40/30/20/10
+    // $10  → 10x $1  (each coin = 10%, put 4/3/2/1 coins per bucket)
+    // $20  → 2x $5 + 10x $1  (spend $8, goals $6, future $4, give $2)
+    // $50  → 4x $10 + 2x $5  (spend $20, goals $15, future $10, give $5)
+    const sets: Record<number, number[]> = {
+      10: [1,1,1,1,1,1,1,1,1,1],
+      20: [5,5,1,1,1,1,1,1,1,1,1,1],
+      50: [10,10,10,10,5,5],
+    };
+    const denoms = sets[amount] ?? (() => {
+      // Fallback: greedy with variety
+      const r: number[] = [];
+      let rem = amount;
+      for (const d of [10, 5, 1]) { while (rem >= d) { r.push(d); rem -= d; } }
+      return r;
+    })();
+    for (const d of denoms) {
+      result.push({ id: nextId.current++, value: d, bucketId: null });
     }
     return result;
   };
