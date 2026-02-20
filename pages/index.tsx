@@ -227,7 +227,10 @@ const Home: NextPage = () => {
                 <div className="tools-inner">
                 {/* Left: text + CTA */}
                 <div style={{ flex: 1, minWidth: "min(100%, 200px)" }}>
-                  <div style={{ fontSize: 10, letterSpacing: 2.5, textTransform: "uppercase", color: C.teal, fontFamily: "'Trebuchet MS',sans-serif", fontWeight: 700, marginBottom: 7 }}>🛠️ Interactive Tools</div>
+                  <div style={{ fontSize: 10, letterSpacing: 2.5, textTransform: "uppercase", color: C.teal, fontFamily: "'Trebuchet MS',sans-serif", fontWeight: 700, marginBottom: 7, display: "flex", alignItems: "center", gap: 8 }}>
+                    🛠️ Interactive Tools
+                    <span style={{ background: C.gold, color: C.navy, fontSize: 9, fontWeight: 700, padding: "2px 8px", borderRadius: 20, letterSpacing: 1 }}>NEW</span>
+                  </div>
                   <div style={{ fontSize: "clamp(16px,3vw,20px)", fontWeight: 700, color: "#fff", marginBottom: 6, lineHeight: 1.2 }}>Learn Money by <em style={{ color: C.teal }}>Doing</em></div>
                   <div style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 16 }}>Calculators, games &amp; stories that turn lessons into real experiences.</div>
                   <span onClick={() => router.push("/tools")} style={{ display: "inline-block", background: C.teal, color: C.navy, padding: "9px 22px", borderRadius: 50, fontSize: 13, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif", cursor: "pointer" }}>Explore Tools →</span>
