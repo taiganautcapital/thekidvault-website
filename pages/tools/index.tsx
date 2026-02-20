@@ -107,7 +107,7 @@ const ToolsHubPage: NextPage = () => {
         {/* ── HERO ── */}
         <div style={{
           background: `linear-gradient(135deg, ${C.navy} 0%, ${C.navyLight} 100%)`,
-          padding: "52px 24px 64px",
+          padding: "clamp(32px,6vw,52px) 24px clamp(48px,8vw,64px)",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
@@ -170,7 +170,7 @@ const ToolsHubPage: NextPage = () => {
         </div>
 
         {/* ── TOOLS GRID ── */}
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "52px 20px 80px" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", padding: "clamp(32px,5vw,52px) 20px clamp(48px,8vw,80px)" }}>
 
           <div style={{ marginBottom: 36, textAlign: "center" }}>
             <div style={{
@@ -201,7 +201,7 @@ const ToolsHubPage: NextPage = () => {
                   style={{
                     background: "#fff",
                     borderRadius: 20,
-                    padding: "28px 24px",
+                    padding: "clamp(20px,4vw,28px) clamp(16px,3vw,24px)",
                     border: `2px solid ${isHovered && !tool.comingSoon ? tool.accentColor + "60" : C.border}`,
                     cursor: tool.comingSoon ? "default" : "pointer",
                     transition: "all 0.28s ease",
@@ -232,6 +232,7 @@ const ToolsHubPage: NextPage = () => {
                       padding: "3px 10px", borderRadius: 20,
                       fontFamily: "'Trebuchet MS',sans-serif",
                       textTransform: "uppercase", letterSpacing: 1,
+                      maxWidth: "calc(100% - 80px)",
                     }}>
                       {tool.badge}
                     </div>
@@ -246,6 +247,7 @@ const ToolsHubPage: NextPage = () => {
                       padding: "3px 10px", borderRadius: 20,
                       fontFamily: "'Trebuchet MS',sans-serif",
                       textTransform: "uppercase", letterSpacing: 1,
+                      maxWidth: "calc(100% - 80px)",
                     }}>
                       Coming Soon
                     </div>

@@ -228,15 +228,15 @@ const Home: NextPage = () => {
 
                 <div className="tools-inner">
                 {/* Left: text + CTA */}
-                <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ flex: 1, minWidth: "min(100%, 200px)" }}>
                   <div style={{ fontSize: 10, letterSpacing: 2.5, textTransform: "uppercase", color: C.teal, fontFamily: "'Trebuchet MS',sans-serif", fontWeight: 700, marginBottom: 7 }}>🛠️ Interactive Tools</div>
-                  <div style={{ fontSize: 20, fontWeight: 700, color: "#fff", marginBottom: 6, lineHeight: 1.2 }}>Learn Money by <em style={{ color: C.teal }}>Doing</em></div>
-                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 16 }}>Calculators, games &amp; stories that turn lessons into real experiences — learn money by doing.</div>
+                  <div style={{ fontSize: "clamp(16px,3vw,20px)", fontWeight: 700, color: "#fff", marginBottom: 6, lineHeight: 1.2 }}>Learn Money by <em style={{ color: C.teal }}>Doing</em></div>
+                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 16 }}>Calculators, games &amp; stories that turn lessons into real experiences.</div>
                   <span style={{ display: "inline-block", background: C.teal, color: C.navy, padding: "9px 22px", borderRadius: 50, fontSize: 13, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif" }}>Explore Tools →</span>
                 </div>
 
                 {/* Right: tool pills */}
-                <div className="tools-pills">
+                <div className="tools-pills-landing">
                   {[
                     { icon: "🎯", label: "Dream Goal Calculator", sub: "How long to save for anything", live: true },
                     { icon: "🗺️", label: "Choose Your Path", sub: "Money adventure stories", live: false },
