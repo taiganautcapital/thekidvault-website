@@ -9,9 +9,9 @@ import CertificateAct from "@/components/CertificateAct";
 import { gaEvent } from "@/lib/data";
 
 const TOOLS = [
-  { icon: "🎯", label: "Dream Goal Calculator", sub: "How long to save for anything", live: true },
-  { icon: "🗺️", label: "Choose Your Path", sub: "Money adventure stories", live: false },
-  { icon: "🪣", label: "Drag & Drop Budgeter", sub: "Sort money into 4 buckets", live: false },
+  { icon: "🎯", label: "Dream Goal Calculator", sub: "How long to save for anything", href: "/tools/dream-goal-calculator" },
+  { icon: "🗺️", label: "Choose Your Path", sub: "Money adventure stories", href: "/tools/choose-your-path" },
+  { icon: "🪣", label: "Drag & Drop Budgeter", sub: "Sort money into 4 buckets", href: "/tools/drag-drop-budgeter" },
 ];
 
 const ChaptersPage: NextPage = () => {
@@ -112,8 +112,7 @@ const ChaptersPage: NextPage = () => {
 
           {/* Tools card */}
           <div
-            onClick={() => router.push("/tools")}
-            style={{ borderRadius: 16, overflow: "hidden", border: "1px solid rgba(46,196,182,0.25)", background: "linear-gradient(135deg,#1b3a47,#162e3c)", cursor: "pointer", boxShadow: "0 4px 20px rgba(46,196,182,0.08)" }}
+            style={{ borderRadius: 16, overflow: "hidden", border: "1px solid rgba(46,196,182,0.25)", background: "linear-gradient(135deg,#1b3a47,#162e3c)", boxShadow: "0 4px 20px rgba(46,196,182,0.08)" }}
           >
             {/* Teal top accent line */}
             <div style={{ height: 2, background: "linear-gradient(90deg,transparent,#2EC4B6,transparent)" }} />
@@ -126,15 +125,15 @@ const ChaptersPage: NextPage = () => {
               <div style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 16 }}>
                 Calculators, games &amp; stories that bring your lessons to life.
               </div>
-              <div style={{ display: "inline-block", background: C.teal, color: C.navy, padding: "9px 22px", borderRadius: 50, fontSize: 13, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 18 }}>
+              <div onClick={() => router.push("/tools")} style={{ display: "inline-block", background: C.teal, color: C.navy, padding: "9px 22px", borderRadius: 50, fontSize: 13, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 18, cursor: "pointer" }}>
                 Explore Tools →
               </div>
 
               {/* 3 horizontal pills — stack on mobile via CSS class */}
               <div className="tools-pills">
                 {TOOLS.map((tool, i) => (
-                  <div key={i} style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", borderRadius: 10, padding: "10px 12px", position: "relative" }}>
-                    <div style={{ position: "absolute", top: 10, right: 10, width: 6, height: 6, borderRadius: "50%", background: tool.live ? C.teal : "rgba(255,255,255,0.2)", boxShadow: tool.live ? "0 0 6px rgba(46,196,182,0.6)" : "none" }} />
+                  <div key={i} onClick={() => router.push(tool.href)} style={{ flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", borderRadius: 10, padding: "10px 12px", position: "relative", cursor: "pointer", transition: "background 0.2s" }}>
+                    <div style={{ position: "absolute", top: 10, right: 10, width: 6, height: 6, borderRadius: "50%", background: C.teal, boxShadow: "0 0 6px rgba(46,196,182,0.6)" }} />
                     <div style={{ fontSize: 16, marginBottom: 5 }}>{tool.icon}</div>
                     <div style={{ color: "#fff", fontSize: 11, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif", lineHeight: 1.3, marginBottom: 2 }}>{tool.label}</div>
                     <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 10, fontFamily: "'Trebuchet MS',sans-serif", lineHeight: 1.3 }}>{tool.sub}</div>

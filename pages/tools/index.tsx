@@ -27,7 +27,6 @@ const TOOLS: Tool[] = [
       "Type in your dream — a LEGO set, gaming headset, or a bike — enter your weekly savings, and watch the magic. See exactly how many weeks until it's yours!",
     accentColor: C.ch4,
     href: "/tools/dream-goal-calculator",
-    badge: "New!",
   },
   {
     id: "choose-your-path",
@@ -37,7 +36,7 @@ const TOOLS: Tool[] = [
     description:
       "Make real money decisions in fun story scenarios. Spend or save? Invest or keep cash? Every choice leads somewhere different — and teaches a real lesson!",
     accentColor: C.ch3,
-    href: "/tools/choose-your-path",    
+    href: "/tools/choose-your-path",
   },
   {
     id: "drag-drop-budgeter",
@@ -48,7 +47,6 @@ const TOOLS: Tool[] = [
       "Drag coins into your four money buckets — Spending, Goals, Future, and Giving. Can you hit the perfect 40/30/20/10 split?",
     accentColor: C.ch2,
     href: "/tools/drag-drop-budgeter",
-    comingSoon: true,
   },
 ];
 
@@ -106,7 +104,7 @@ const ToolsHubPage: NextPage = () => {
         {/* ── HERO ── */}
         <div style={{
           background: `linear-gradient(135deg, ${C.navy} 0%, ${C.navyLight} 100%)`,
-          padding: "clamp(32px,6vw,52px) 24px clamp(48px,8vw,64px)",
+          padding: "52px 24px 64px",
           textAlign: "center",
           position: "relative",
           overflow: "hidden",
@@ -169,7 +167,7 @@ const ToolsHubPage: NextPage = () => {
         </div>
 
         {/* ── TOOLS GRID ── */}
-        <div style={{ maxWidth: 900, margin: "0 auto", padding: "clamp(32px,5vw,52px) 20px clamp(48px,8vw,80px)" }}>
+        <div style={{ maxWidth: 900, margin: "0 auto", padding: "52px 20px 80px" }}>
 
           <div style={{ marginBottom: 36, textAlign: "center" }}>
             <div style={{
@@ -196,19 +194,19 @@ const ToolsHubPage: NextPage = () => {
                   key={tool.id}
                   onMouseEnter={() => setHovered(tool.id)}
                   onMouseLeave={() => setHovered(null)}
-                  onClick={() => !tool.comingSoon && router.push(tool.href)}
+                  onClick={() => router.push(tool.href)}
                   style={{
                     background: "#fff",
                     borderRadius: 20,
-                    padding: "clamp(20px,4vw,28px) clamp(16px,3vw,24px)",
-                    border: `2px solid ${isHovered && !tool.comingSoon ? tool.accentColor + "60" : C.border}`,
-                    cursor: tool.comingSoon ? "default" : "pointer",
+                    padding: "28px 24px",
+                    border: `2px solid ${isHovered ? tool.accentColor + "60" : C.border}`,
+                    cursor: "pointer",
                     transition: "all 0.28s ease",
-                    transform: isHovered && !tool.comingSoon ? "translateY(-5px)" : "none",
-                    boxShadow: isHovered && !tool.comingSoon
+                    transform: isHovered ? "translateY(-5px)" : "none",
+                    boxShadow: isHovered
                       ? `0 16px 40px rgba(0,0,0,0.1), 0 0 0 1px ${tool.accentColor}20`
                       : "0 2px 12px rgba(0,0,0,0.04)",
-                    opacity: tool.comingSoon ? 0.72 : 1,
+                    opacity: 1,
                     position: "relative",
                     overflow: "hidden",
                   }}
@@ -217,40 +215,8 @@ const ToolsHubPage: NextPage = () => {
                   <div style={{
                     position: "absolute", top: 0, left: 0, right: 0,
                     height: 4, borderRadius: "20px 20px 0 0",
-                    background: tool.comingSoon
-                      ? C.border
-                      : `linear-gradient(90deg, ${tool.accentColor}, ${tool.accentColor}80)`,
+                    background: `linear-gradient(90deg, ${tool.accentColor}, ${tool.accentColor}80)`,
                   }} />
-
-                  {/* Badge */}
-                  {tool.badge && !tool.comingSoon && (
-                    <div style={{
-                      position: "absolute", top: 16, right: 16,
-                      background: C.gold, color: C.navy,
-                      fontSize: 11, fontWeight: 700,
-                      padding: "3px 10px", borderRadius: 20,
-                      fontFamily: "'Trebuchet MS',sans-serif",
-                      textTransform: "uppercase", letterSpacing: 1,
-                      maxWidth: "calc(100% - 80px)",
-                    }}>
-                      {tool.badge}
-                    </div>
-                  )}
-
-                  {/* Coming Soon badge */}
-                  {tool.comingSoon && (
-                    <div style={{
-                      position: "absolute", top: 16, right: 16,
-                      background: C.border, color: C.textLight,
-                      fontSize: 11, fontWeight: 700,
-                      padding: "3px 10px", borderRadius: 20,
-                      fontFamily: "'Trebuchet MS',sans-serif",
-                      textTransform: "uppercase", letterSpacing: 1,
-                      maxWidth: "calc(100% - 80px)",
-                    }}>
-                      Coming Soon
-                    </div>
-                  )}
 
                   {/* Emoji icon */}
                   <div style={{
@@ -288,10 +254,10 @@ const ToolsHubPage: NextPage = () => {
                   <div style={{
                     display: "inline-flex", alignItems: "center", gap: 6,
                     fontSize: 13, fontWeight: 700,
-                    color: tool.comingSoon ? C.textLight : tool.accentColor,
+                    color: tool.accentColor,
                     fontFamily: "'Trebuchet MS',sans-serif",
                   }}>
-                    {tool.comingSoon ? "Coming soon..." : "Try it now →"}
+                    {"Try it now →"}
                   </div>
                 </div>
               );

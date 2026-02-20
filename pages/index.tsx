@@ -216,15 +216,13 @@ const Home: NextPage = () => {
 
               {/* Tools card */}
               <div
-                onClick={() => router.push("/tools")}
-                style={{ background: "linear-gradient(135deg,#1b3a47,#162e3c)", borderRadius: 14, padding: "24px 24px", border: "1px solid rgba(46,196,182,0.45)", position: "relative", overflow: "hidden", cursor: "pointer" }}
+                style={{ background: "linear-gradient(135deg,#1b3a47,#162e3c)", borderRadius: 14, padding: "24px 24px", border: "1px solid rgba(46,196,182,0.45)", position: "relative", overflow: "hidden" }}
               >
                 {/* Teal top-edge accent line */}
                 <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(90deg,#2EC4B6,rgba(46,196,182,0.15))" }} />
                 {/* Subtle corner glow */}
                 <div style={{ position: "absolute", top: -40, right: -40, width: 160, height: 160, borderRadius: "50%", background: "rgba(46,196,182,0.07)", pointerEvents: "none" }} />
-                {/* NEW badge */}
-                <div style={{ position: "absolute", top: 12, right: 12, background: C.teal, color: C.navy, fontSize: 9, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1, padding: "3px 10px", borderRadius: 20, fontFamily: "'Trebuchet MS',sans-serif" }}>NEW</div>
+
 
                 <div className="tools-inner">
                 {/* Left: text + CTA */}
@@ -232,23 +230,23 @@ const Home: NextPage = () => {
                   <div style={{ fontSize: 10, letterSpacing: 2.5, textTransform: "uppercase", color: C.teal, fontFamily: "'Trebuchet MS',sans-serif", fontWeight: 700, marginBottom: 7 }}>🛠️ Interactive Tools</div>
                   <div style={{ fontSize: "clamp(16px,3vw,20px)", fontWeight: 700, color: "#fff", marginBottom: 6, lineHeight: 1.2 }}>Learn Money by <em style={{ color: C.teal }}>Doing</em></div>
                   <div style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 16 }}>Calculators, games &amp; stories that turn lessons into real experiences.</div>
-                  <span style={{ display: "inline-block", background: C.teal, color: C.navy, padding: "9px 22px", borderRadius: 50, fontSize: 13, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif" }}>Explore Tools →</span>
+                  <span onClick={() => router.push("/tools")} style={{ display: "inline-block", background: C.teal, color: C.navy, padding: "9px 22px", borderRadius: 50, fontSize: 13, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif", cursor: "pointer" }}>Explore Tools →</span>
                 </div>
 
                 {/* Right: tool pills */}
                 <div className="tools-pills-landing">
                   {[
-                    { icon: "🎯", label: "Dream Goal Calculator", sub: "How long to save for anything", live: true },
-                    { icon: "🗺️", label: "Choose Your Path", sub: "Money adventure stories", live: false },
-                    { icon: "🪣", label: "Drag & Drop Budgeter", sub: "Sort money into 4 buckets", live: false },
+                    { icon: "🎯", label: "Dream Goal Calculator", sub: "How long to save for anything", href: "/tools/dream-goal-calculator" },
+                    { icon: "🗺️", label: "Choose Your Path", sub: "Money adventure stories", href: "/tools/choose-your-path" },
+                    { icon: "🪣", label: "Drag & Drop Budgeter", sub: "Sort money into 4 buckets", href: "/tools/drag-drop-budgeter" },
                   ].map((tool, i) => (
-                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", borderRadius: 9, padding: "9px 13px" }}>
+                    <div key={i} onClick={() => router.push(tool.href)} style={{ display: "flex", alignItems: "center", gap: 10, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", borderRadius: 9, padding: "9px 13px", cursor: "pointer", transition: "background 0.2s" }}>
                       <span style={{ fontSize: 17, flexShrink: 0 }}>{tool.icon}</span>
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ color: "#fff", fontSize: 12, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif" }}>{tool.label}</div>
                         <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, fontFamily: "'Trebuchet MS',sans-serif" }}>{tool.sub}</div>
                       </div>
-                      <div style={{ width: 6, height: 6, borderRadius: "50%", flexShrink: 0, background: tool.live ? C.teal : "rgba(255,255,255,0.2)", boxShadow: tool.live ? "0 0 6px rgba(46,196,182,0.6)" : "none" }} />
+                      <div style={{ width: 6, height: 6, borderRadius: "50%", flexShrink: 0, background: C.teal, boxShadow: "0 0 6px rgba(46,196,182,0.6)" }} />
                     </div>
                   ))}
                 </div>

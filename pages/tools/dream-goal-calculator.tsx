@@ -126,29 +126,57 @@ const DreamGoalCalculator: NextPage = () => {
 
         {/* ── PAGE HEADER ── */}
         <div style={{
-          background: `linear-gradient(135deg, ${C.ch4}18, ${C.ch4}06)`,
-          borderBottom: `1px solid ${C.ch4}25`,
-          padding: "36px 20px 32px",
+          background: `linear-gradient(135deg, ${C.navy} 0%, ${C.navyLight} 100%)`,
+          padding: "52px 24px 64px",
           textAlign: "center",
+          position: "relative",
+          overflow: "hidden",
         }}>
+          {/* Grid pattern */}
           <div style={{
-            display: "inline-block", fontSize: 48, marginBottom: 12,
-            filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.08))",
-          }}>
-            🎯
+            position: "absolute", inset: 0, opacity: 0.035,
+            backgroundImage: `repeating-linear-gradient(0deg, ${C.gold} 0px, ${C.gold} 1px, transparent 1px, transparent 48px),
+              repeating-linear-gradient(90deg, ${C.gold} 0px, ${C.gold} 1px, transparent 1px, transparent 48px)`,
+          }} />
+          {/* Floating orbs */}
+          {[
+            { top: "12%", left: "6%", size: 70 },
+            { top: "60%", left: "3%", size: 35 },
+            { top: "20%", right: "8%", size: 50 },
+            { top: "65%", right: "5%", size: 80 },
+          ].map((orb, i) => (
+            <div key={i} style={{
+              position: "absolute", top: orb.top, left: (orb as any).left, right: (orb as any).right,
+              width: orb.size, height: orb.size, borderRadius: "50%",
+              border: `1px solid ${C.gold}25`, pointerEvents: "none",
+            }} />
+          ))}
+          <div style={{ position: "relative", zIndex: 1, maxWidth: 580, margin: "0 auto" }}>
+            <div style={{
+              fontSize: 52, marginBottom: 16,
+              filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.2))",
+            }}>
+              🎯
+            </div>
+            <h1 style={{
+              color: "#fff", fontSize: "clamp(28px,6vw,44px)",
+              margin: "0 0 16px", fontFamily: "Georgia,serif",
+              fontWeight: 700, lineHeight: 1.15,
+            }}>
+              Dream Goal Calculator
+            </h1>
+            <p style={{
+              color: "rgba(255,255,255,0.68)",
+              fontSize: "clamp(15px,2.5vw,17px)",
+              lineHeight: 1.75, fontFamily: "'Trebuchet MS',sans-serif",
+              margin: "0 auto", maxWidth: 460,
+            }}>
+              What do you want to save for? Let's figure out how to get there! 💰
+            </p>
           </div>
-          <h1 style={{
-            fontSize: "clamp(26px,5vw,36px)", margin: "0 0 10px",
-            fontFamily: "Georgia,serif", color: C.navy,
-          }}>
-            Dream Goal Calculator
-          </h1>
-          <p style={{
-            fontSize: 15, color: C.textLight, margin: 0,
-            fontFamily: "'Trebuchet MS',sans-serif", lineHeight: 1.6,
-          }}>
-            What do you want to save for? Let's figure out how to get there! 💰
-          </p>
+          <svg viewBox="0 0 1440 52" style={{ position: "absolute", bottom: -1, left: 0, width: "100%", display: "block" }}>
+            <path d="M0,28 C360,52 1080,0 1440,28 L1440,52 L0,52 Z" fill={C.cream} />
+          </svg>
         </div>
 
         {/* ── MAIN CONTENT ── */}
