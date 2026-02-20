@@ -66,6 +66,18 @@ const Home: NextPage = () => {
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <style>{`
+    .feat-row1 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+    .feat-row2 { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; }
+    .tools-inner { display: flex; align-items: center; gap: 28px; }
+    .tools-pills { display: flex; flex-direction: column; gap: 9px; flex-shrink: 0; min-width: 190px; }
+    @media (max-width: 639px) {
+      .feat-row1 { grid-template-columns: 1fr; }
+      .feat-row2 { grid-template-columns: 1fr; }
+      .tools-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .tools-pills { min-width: 0; width: 100%; }
+    }
+  `}</style>
 </Head>
 
       <div style={{ background: C.cream }}>
@@ -150,6 +162,7 @@ const Home: NextPage = () => {
         </section>
         
         <div style={{ maxWidth: 100, height: 3, background: `linear-gradient(90deg,transparent,${C.gold},transparent)`, margin: "0 auto 60px", borderRadius: 2 }} />
+
         {/* CHAPTERS */}
         <section style={{ maxWidth: 900, margin: "0 auto", padding: "20px 24px 60px" }}>
           <div style={{ textAlign: "center", marginBottom: 40 }}>
@@ -182,24 +195,77 @@ const Home: NextPage = () => {
         {/* FEATURES */}
         <section style={{ background: C.navy, color: "#fff", padding: "60px 24px", position: "relative" }}>
           <svg viewBox="0 0 1440 60" style={{ position: "absolute", top: -1, left: 0, width: "100%" }}><path d="M0,60 C480,0 960,60 1440,0 L1440,0 L0,0 Z" fill={C.cream} /></svg>
-          <div style={{ maxWidth: 800, margin: "0 auto", paddingTop: 20 }}>
+          <div style={{ maxWidth: 860, margin: "0 auto", paddingTop: 20 }}>
             <div style={{ textAlign: "center", marginBottom: 48 }}>
               <div style={{ fontSize: 13, color: C.gold, textTransform: "uppercase", letterSpacing: 3, marginBottom: 12, fontFamily: "'Trebuchet MS',sans-serif", fontWeight: 600 }}>What's Inside</div>
               <h2 style={{ fontSize: "clamp(28px,5vw,36px)", margin: 0, fontWeight: 700, fontFamily: "Georgia,serif" }}>Learning That Sticks</h2>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(220px,1fr))", gap: 24 }}>
+
+            {/* Row 1 — 3 equal cards */}
+            <div className="feat-row1">
               {[
                 { i: "📖", t: "Bite-Sized Lessons", d: "Each concept in simple, fun language. No jargon, no boredom. Hover over tricky words for instant definitions!" },
-                { i: "❓", t: "Quizzes Each Chapter", d: "Quick check-ins with instant feedback and personalized encouragement." },
-                { i: "🎮", t: "Interactive Activities", d: "Budget builders, simulators, and detective games — learning by doing." },
+                { i: "❓", t: "Quizzes Each Chapter", d: "Quick check-ins with instant feedback and personalized encouragement after every chapter." },
                 { i: "⭐", t: "Stars & Progress", d: "Earn stars for every lesson, quiz, and activity. Track your journey and earn your certificate!" },
               ].map((f, i) => (
-                <div key={i} style={{ background: "rgba(255,255,255,0.05)", borderRadius: 16, padding: "28px 22px", border: "1px solid rgba(255,255,255,0.08)" }}>
-                  <div style={{ fontSize: 28, marginBottom: 14 }}>{f.i}</div>
-                  <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 8, color: C.goldLight }}>{f.t}</div>
-                  <div style={{ fontSize: 13.5, color: "rgba(255,255,255,0.6)", lineHeight: 1.6, fontFamily: "'Trebuchet MS',sans-serif" }}>{f.d}</div>
+                <div key={i} style={{ background: "rgba(255,255,255,0.05)", borderRadius: 14, padding: "24px 20px", border: "1px solid rgba(255,255,255,0.08)" }}>
+                  <div style={{ fontSize: 26, marginBottom: 12 }}>{f.i}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 8, color: C.goldLight }}>{f.t}</div>
+                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.65, fontFamily: "'Trebuchet MS',sans-serif" }}>{f.d}</div>
                 </div>
               ))}
+            </div>
+
+            {/* Row 2 — Activities (1/3) + Tools card (2/3) */}
+            <div className="feat-row2">
+
+              {/* Activities card */}
+              <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 14, padding: "24px 20px", border: "1px solid rgba(255,255,255,0.08)" }}>
+                <div style={{ fontSize: 26, marginBottom: 12 }}>🎮</div>
+                <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 8, color: C.goldLight }}>Interactive Activities</div>
+                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", lineHeight: 1.65, fontFamily: "'Trebuchet MS',sans-serif" }}>Budget builders, simulators, and detective games — learning by doing.</div>
+              </div>
+
+              {/* Tools card */}
+              <div
+                onClick={() => router.push("/tools")}
+                style={{ background: "linear-gradient(135deg,#1b3a47,#162e3c)", borderRadius: 14, padding: "24px 24px", border: "1px solid rgba(46,196,182,0.45)", position: "relative", overflow: "hidden", cursor: "pointer" }}
+              >
+                {/* Teal top-edge accent line */}
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 2, background: "linear-gradient(90deg,#2EC4B6,rgba(46,196,182,0.15))" }} />
+                {/* Subtle corner glow */}
+                <div style={{ position: "absolute", top: -40, right: -40, width: 160, height: 160, borderRadius: "50%", background: "rgba(46,196,182,0.07)", pointerEvents: "none" }} />
+                {/* NEW badge */}
+                <div style={{ position: "absolute", top: 12, right: 12, background: C.teal, color: C.navy, fontSize: 9, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1, padding: "3px 10px", borderRadius: 20, fontFamily: "'Trebuchet MS',sans-serif" }}>NEW</div>
+
+                <div className="tools-inner">
+                {/* Left: text + CTA */}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ fontSize: 10, letterSpacing: 2.5, textTransform: "uppercase", color: C.teal, fontFamily: "'Trebuchet MS',sans-serif", fontWeight: 700, marginBottom: 7 }}>🛠️ Interactive Tools</div>
+                  <div style={{ fontSize: 20, fontWeight: 700, color: "#fff", marginBottom: 6, lineHeight: 1.2 }}>Learn Money by <em style={{ color: C.teal }}>Doing</em></div>
+                  <div style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.65, fontFamily: "'Trebuchet MS',sans-serif", marginBottom: 16 }}>Calculators, games &amp; stories that turn lessons into real experiences — learn money by doing.</div>
+                  <span style={{ display: "inline-block", background: C.teal, color: C.navy, padding: "9px 22px", borderRadius: 50, fontSize: 13, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif" }}>Explore Tools →</span>
+                </div>
+
+                {/* Right: tool pills */}
+                <div className="tools-pills">
+                  {[
+                    { icon: "🎯", label: "Dream Goal Calculator", sub: "How long to save for anything", live: true },
+                    { icon: "🗺️", label: "Choose Your Path", sub: "Money adventure stories", live: false },
+                    { icon: "🪣", label: "Drag & Drop Budgeter", sub: "Sort money into 4 buckets", live: false },
+                  ].map((tool, i) => (
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.09)", borderRadius: 9, padding: "9px 13px" }}>
+                      <span style={{ fontSize: 17, flexShrink: 0 }}>{tool.icon}</span>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ color: "#fff", fontSize: 12, fontWeight: 700, fontFamily: "'Trebuchet MS',sans-serif" }}>{tool.label}</div>
+                        <div style={{ color: "rgba(255,255,255,0.4)", fontSize: 11, fontFamily: "'Trebuchet MS',sans-serif" }}>{tool.sub}</div>
+                      </div>
+                      <div style={{ width: 6, height: 6, borderRadius: "50%", flexShrink: 0, background: tool.live ? C.teal : "rgba(255,255,255,0.2)", boxShadow: tool.live ? "0 0 6px rgba(46,196,182,0.6)" : "none" }} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
