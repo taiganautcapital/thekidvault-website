@@ -37,8 +37,7 @@ const TOOLS: Tool[] = [
     description:
       "Make real money decisions in fun story scenarios. Spend or save? Invest or keep cash? Every choice leads somewhere different — and teaches a real lesson!",
     accentColor: C.ch3,
-    href: "/tools/choose-your-path",
-    comingSoon: true,
+    href: "/tools/choose-your-path",    
   },
   {
     id: "drag-drop-budgeter",
