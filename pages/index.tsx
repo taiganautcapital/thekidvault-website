@@ -66,18 +66,6 @@ const Home: NextPage = () => {
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <style>{`
-    .feat-row1 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
-    .feat-row2 { display: grid; grid-template-columns: 1fr 2fr; gap: 16px; }
-    .tools-inner { display: flex; align-items: center; gap: 28px; }
-    .tools-pills { display: flex; flex-direction: column; gap: 9px; flex-shrink: 0; min-width: 190px; }
-    @media (max-width: 639px) {
-      .feat-row1 { grid-template-columns: 1fr; }
-      .feat-row2 { grid-template-columns: 1fr; }
-      .tools-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .tools-pills { min-width: 0; width: 100%; }
-    }
-  `}</style>
 </Head>
 
       <div style={{ background: C.cream }}>
