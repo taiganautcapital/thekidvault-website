@@ -86,14 +86,7 @@ const ChapterPage: NextPage<Props> = ({ chapterIndex }) => {
 
   const ch = CH[chapterIndex];
 
-  useEffect(() => {
-    if (hydrated && !activeProfile) {
-      router.replace(`/welcome?next=/chapter/${chapterIndex + 1}`);
-    }
-  }, [hydrated, activeProfile, router, chapterIndex]);
-
-if (!hydrated) return (
-  <>
+  const seoHead = (
     <Head>
       <title>{ch.seoTitle}</title>
       <meta name="robots" content="index, follow" />
@@ -110,31 +103,35 @@ if (!hydrated) return (
       <meta name="twitter:description" content={ch.seoDesc} />
       <meta name="twitter:image" content="https://www.thekidvault.com/og-image.png" />
     </Head>
-    <div />
-  </>
-);
+  );
 
-if (!activeProfile) return (
-  <>
-    <Head>
-      <title>{ch.seoTitle}</title>
-      <meta name="robots" content="index, follow" />
-      <meta name="description" content={ch.seoDesc} />
-      <link rel="canonical" href={`https://www.thekidvault.com/chapter/${ch.id}`} />
-      <meta property="og:title" content={ch.seoTitle} />
-      <meta property="og:description" content={ch.seoDesc} />
-      <meta property="og:url" content={`https://www.thekidvault.com/chapter/${ch.id}`} />
-      <meta property="og:type" content="article" />
-      <meta property="og:site_name" content="The Kid Vault" />
-      <meta property="og:image" content="https://www.thekidvault.com/og-image.png" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={ch.seoTitle} />
-      <meta name="twitter:description" content={ch.seoDesc} />
-      <meta name="twitter:image" content="https://www.thekidvault.com/og-image.png" />
-    </Head>
-    <div />
-  </>
-);
+  if (!hydrated || !activeProfile) return (
+    <>
+      {seoHead}
+      <div style={{ minHeight: "100vh", background: `linear-gradient(135deg,${C.navy},#243447)`, display: "flex", alignItems: "center", justifyContent: "center", padding: 24 }}>
+        <div style={{ maxWidth: 480, width: "100%", textAlign: "center" }}>
+          <Logo size={60} />
+          <h1 style={{ color: "#fff", fontSize: 28, margin: "16px 0 8px", fontFamily: "Georgia,serif" }}>{ch.t}</h1>
+          <p style={{ color: "#F5E6B8", fontSize: 15, marginBottom: 12, fontFamily: "'Trebuchet MS',sans-serif" }}>{ch.seoDesc}</p>
+          <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: 16, padding: "20px 24px", marginBottom: 28, textAlign: "left" }}>
+            <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1, marginBottom: 12, fontFamily: "'Trebuchet MS',sans-serif" }}>What you'll learn</div>
+            {ch.lessons.slice(0, 5).map((l: any, i: number) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "6px 0", borderBottom: i < 4 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
+                <span style={{ fontSize: 16 }}>{l.icon}</span>
+                <span style={{ color: "rgba(255,255,255,0.8)", fontSize: 14, fontFamily: "'Trebuchet MS',sans-serif" }}>{l.t}</span>
+              </div>
+            ))}
+          </div>
+          <button onClick={() => router.push(`/welcome?next=/chapter/${ch.id}`)} style={{ background: "#D4A843", color: "#1a2332", border: "none", padding: "14px 32px", borderRadius: 50, fontSize: 16, fontWeight: 700, cursor: "pointer", fontFamily: "'Trebuchet MS',sans-serif", width: "100%", maxWidth: 320 }}>
+            Start Chapter {ch.id} →
+          </button>
+          <button onClick={() => router.push("/chapters")} style={{ background: "transparent", color: "rgba(255,255,255,0.5)", border: "none", padding: "12px 32px", fontSize: 14, cursor: "pointer", fontFamily: "'Trebuchet MS',sans-serif", marginTop: 8 }}>
+            ← All Chapters
+          </button>
+        </div>
+      </div>
+    </>
+  );
 
   const stars = activeProfile.stars;
   const earnedStars = Object.keys(stars).length;
