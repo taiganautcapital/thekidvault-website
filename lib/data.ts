@@ -71,13 +71,14 @@ export interface Chapter {
   d: string;
   seoTitle: string;
   seoDesc: string;
+  seoKeywords: string;
   lessons: Lesson[];
   quiz: QuizQuestion[];
   act: { type: string; t: string; d: string };
 }
 
 export const CH: Chapter[] = [
-  { id:1, t:"What Is Money?", icon:"🪙", c:C.ch1, d:"Where money came from, how to earn it, and why banks exist.", seoTitle:"What Is Money? Free Lesson for Kids – The Kid Vault", seoDesc:"Teach kids where money came from, how earning works, and why banks exist. Free interactive lesson for ages 6-12.",
+  { id:1, t:"What Is Money?", icon:"🪙", c:C.ch1, d:"Where money came from, how to earn it, and why banks exist.", seoTitle:"What Is Money? Free Lesson for Kids – The Kid Vault", seoDesc:"Teach kids where money came from, how earning works, and why banks exist. Free interactive lesson for ages 6-12.", seoKeywords:"what is money for kids, teaching kids about money, how money works kids, bartering for kids, kids financial literacy",
     lessons:[
       {id:"1-1",t:"The Trading Problem",icon:"🔄",content:[
         "Before money existed, people swapped things directly — three fish for a basket of berries. But what if the berry-picker wanted pottery, not fish?",
@@ -107,7 +108,7 @@ export const CH: Chapter[] = [
     ],
     act:{type:"money-idea",t:"My Money Idea",d:"Discover your earning superpower!"}
   },
-  { id:2, t:"Becoming a Super Saver", icon:"🐷", c:C.ch2, d:"The 4-Bucket Plan, setting goals, and the joy of giving.", seoTitle:"The 4 Bucket Savings Method for Kids – The Kid Vault", seoDesc:"Learn the 4 bucket savings method for kids: spend, save, invest, and give. Free interactive budgeting lesson for ages 6-12.",
+  { id:2, t:"Becoming a Super Saver", icon:"🐷", c:C.ch2, d:"The 4-Bucket Plan, setting goals, and the joy of giving.", seoTitle:"The 4 Bucket Savings Method for Kids – The Kid Vault", seoDesc:"Learn the 4 bucket savings method for kids: spend, save, invest, and give. Free interactive budgeting lesson for ages 6-12.", seoKeywords:"teaching kids to save money, 4 bucket savings method kids, needs vs wants kids, kids savings goals, financial literacy for kids",
     lessons:[
       {id:"2-1",t:"The Marshmallow Choice",icon:"🍪",content:[
         "Imagine someone offers you one cookie now OR three cookies if you wait 30 minutes. That's the core of saving: giving up something small today to get something bigger tomorrow.",
@@ -141,7 +142,7 @@ export const CH: Chapter[] = [
     ],
     act:{type:"budget-builder",t:"Budget Builder",d:"Split $20 across your 4 buckets!"}
   },
-  { id:3, t:"The Magic of Interest", icon:"✨", c:C.ch3, d:"How your money grows while you sleep – the snowball effect.", seoTitle:"Compound Interest for Kids – The Kid Vault", seoDesc:"Explain compound interest to kids with fun examples and an interactive calculator. Free lesson on how money grows over time.",
+  { id:3, t:"The Magic of Interest", icon:"✨", c:C.ch3, d:"How your money grows while you sleep – the snowball effect.", seoTitle:"Compound Interest for Kids – The Kid Vault", seoDesc:"Explain compound interest to kids with fun examples and an interactive calculator. Free lesson on how money grows over time.", seoKeywords:"compound interest for kids, simple interest kids, rule of 72 kids, how money grows kids, teaching kids about interest",
     lessons:[
       {id:"3-1",t:"Your Money's Rent Check",icon:"🏠",content:[
         "When you put money in a bank, the bank uses it to make loans to other people. As a thank-you, they pay you a small fee called interest.",
@@ -171,7 +172,7 @@ export const CH: Chapter[] = [
     ],
     act:{type:"interest-calc",t:"Watch It Grow",d:"See your money grow year by year!"}
   },
-  { id:4, t:"Introduction to Investing", icon:"📊", c:C.ch4, d:"Stocks, bonds, risk vs. reward, and thinking like a detective.", seoTitle:"Investing for Kids: Stocks & Bonds Explained – The Kid Vault", seoDesc:"What are stocks and bonds? Teach kids the basics of investing with simple, fun lessons. Free financial education for ages 6-12.",
+  { id:4, t:"Introduction to Investing", icon:"📊", c:C.ch4, d:"Stocks, bonds, risk vs. reward, and thinking like a detective.", seoTitle:"Investing for Kids: Stocks & Bonds Explained – The Kid Vault", seoDesc:"What are stocks and bonds? Teach kids the basics of investing with simple, fun lessons. Free financial education for ages 6-12.", seoKeywords:"investing for kids, stocks and bonds for kids, what is a stock for kids, risk vs reward kids, kids investing basics",
     lessons:[
       {id:"4-1",t:"Saving vs. Investing",icon:"🅰️",content:[
         "Saving is like parking your bike in the garage — safe but it stays the same. Investing is like planting a garden — some risk but potential to grow much bigger.",
@@ -201,7 +202,7 @@ export const CH: Chapter[] = [
     ],
     act:{type:"biz-detective",t:"Business Detective",d:"Investigate 3 businesses and pick the best investment!"}
   },
-  { id:5, t:"The Investment Menu", icon:"🗂️", c:C.ch5, d:"From super-safe savings accounts to adventurous stocks.", seoTitle:"Index Funds & Investment Types for Kids – The Kid Vault", seoDesc:"Help kids understand index funds, risk vs. reward, and ROI with interactive activities. Free investing lesson for children.",
+  { id:5, t:"The Investment Menu", icon:"🗂️", c:C.ch5, d:"From super-safe savings accounts to adventurous stocks.", seoTitle:"Index Funds & Investment Types for Kids – The Kid Vault", seoDesc:"Help kids understand index funds, risk vs. reward, and ROI with interactive activities. Free investing lesson for children.", seoKeywords:"types of investments for kids, mutual funds for kids, index funds kids, ETF for kids, kids investment options",
     lessons:[
       {id:"5-1",t:"The Safety Zone",icon:"🛡️",content:[
         "Savings accounts let you access cash anytime and earn small interest. Very safe! CDs (Certificates of Deposit) lock your money for a set period in exchange for higher rates.",
@@ -231,7 +232,7 @@ export const CH: Chapter[] = [
     ],
     act:{type:"risk-ranker",t:"Risk-O-Meter",d:"Rank investments from lowest to highest risk!"}
   },
-  { id:6, t:"Be a Smart Investor", icon:"🧠", c:C.ch6, d:"Diversification, patience, portfolios, and investing with values.", seoTitle:"Smart Investing for Kids: Diversification & Portfolios – The Kid Vault", seoDesc:"Teach kids about diversification, building a portfolio, and investing with values. Free financial literacy lesson for ages 6-12.",
+  { id:6, t:"Be a Smart Investor", icon:"🧠", c:C.ch6, d:"Diversification, patience, portfolios, and investing with values.", seoTitle:"Smart Investing for Kids: Diversification & Portfolios – The Kid Vault", seoDesc:"Teach kids about diversification, building a portfolio, and investing with values. Free financial literacy lesson for ages 6-12.", seoKeywords:"diversification for kids, investment portfolio kids, smart investing kids, teaching kids to invest, financial literacy elementary",
     lessons:[
       {id:"6-1",t:"Don't Put All Eggs in One Basket",icon:"🥚",content:[
         "Imagine you sell only lemonade. Rainy week? Zero sales. But if you also sell hot cocoa, rainy days become great for business!",
@@ -260,7 +261,7 @@ export const CH: Chapter[] = [
     ],
     act:{type:"portfolio-builder",t:"Portfolio Builder",d:"Create your investment mix!"}
   },
-  { id:7, t:"Your Money Future", icon:"🌟", c:C.ch7, d:"Putting it all together and taking your first real steps.", seoTitle:"Your Money Future: Financial Goals for Kids – The Kid Vault", seoDesc:"Help kids set financial goals and create a money roadmap for life. Free final chapter of The Kid Vault's financial literacy course.",
+  { id:7, t:"Your Money Future", icon:"🌟", c:C.ch7, d:"Putting it all together and taking your first real steps.", seoTitle:"Your Money Future: Financial Goals for Kids – The Kid Vault", seoDesc:"Help kids set financial goals and create a money roadmap for life. Free final chapter of The Kid Vault's financial literacy course.", seoKeywords:"kids money habits, financial goals for kids, teaching kids financial responsibility, money future kids, kids financial education",
     lessons:[
       {id:"7-1",t:"Early Bird Gets the Worm",icon:"🐦",content:[
         "Starting early is the single most powerful thing you can do with money. Even small amounts, given enough time, grow into something amazing.",

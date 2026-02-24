@@ -166,6 +166,7 @@ if (!hydrated || !activeProfile) return (
       <Head>
   <title>{ch.seoTitle}</title>
   <meta name="description" content={ch.seoDesc} />
+  <meta name="keywords" content={ch.seoKeywords} />
   <link rel="canonical" href={`https://www.thekidvault.com/chapter/${ch.id}`} />
 
   {/* Open Graph */}
