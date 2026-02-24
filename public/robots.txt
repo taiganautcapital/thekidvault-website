@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /welcome
-Disallow: /chapters
 
 Sitemap: https://www.thekidvault.com/sitemap.xml
