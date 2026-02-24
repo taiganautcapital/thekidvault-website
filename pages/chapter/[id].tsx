@@ -96,6 +96,7 @@ if (!hydrated || !activeProfile) return (
   <>
     <Head>
       <title>{ch.seoTitle}</title>
+      <meta name="robots" content="index, follow" />
       <meta name="description" content={ch.seoDesc} />
       <link rel="canonical" href={`https://www.thekidvault.com/chapter/${ch.id}`} />
       <meta property="og:title" content={ch.seoTitle} />
@@ -165,6 +166,7 @@ if (!hydrated || !activeProfile) return (
     <>
       <Head>
   <title>{ch.seoTitle}</title>
+  <meta name="robots" content="index, follow" />
   <meta name="description" content={ch.seoDesc} />
   <meta name="keywords" content={ch.seoKeywords} />
   <link rel="canonical" href={`https://www.thekidvault.com/chapter/${ch.id}`} />
