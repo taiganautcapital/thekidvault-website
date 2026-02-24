@@ -7,6 +7,7 @@ import { Logo, btnS, LessonText, FeedbackButton } from "@/components/ui";
 import { useProfiles } from "@/lib/useProfiles";
 import CertificateAct from "@/components/CertificateAct";
 import Activities from "@/components/Activities";
+import EmailCaptureModal from "@/components/EmailCaptureModal";
 
 interface Props { chapterIndex: number; }
 
@@ -83,8 +84,25 @@ const ChapterPage: NextPage<Props> = ({ chapterIndex }) => {
   const [qIdx, setQIdx] = useState(0);
   const [answered, setAnswered] = useState<number | null>(null);
   const [sideNav, setSideNav] = useState(false);
+  const [showEmailModal, setShowEmailModal] = useState(false);
 
   const ch = CH[chapterIndex];
+
+  // ── Email capture cooldown helpers ──
+  const modalStorageKey = `kv-email-shown-ch${ch?.id}`;
+  const COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+  const shouldShowModal = () => {
+    try {
+      const last = localStorage.getItem(modalStorageKey);
+      if (!last) return true;
+      return Date.now() - parseInt(last, 10) > COOLDOWN_MS;
+    } catch { return true; }
+  };
+
+  const markModalShown = () => {
+    try { localStorage.setItem(modalStorageKey, String(Date.now())); } catch {}
+  };
 
   const seoHead = (
     <Head>
@@ -159,7 +177,12 @@ const ChapterPage: NextPage<Props> = ({ chapterIndex }) => {
     else {
       markStar(`ch${ch.id}-quiz`);
       gaEvent("quiz_complete", { chapter: ch.id });
-      goActivity();
+      if (shouldShowModal()) {
+        markModalShown();
+        setShowEmailModal(true);
+      } else {
+        goActivity();
+      }
     }
   };
 
@@ -359,6 +382,15 @@ const ChapterPage: NextPage<Props> = ({ chapterIndex }) => {
         </div>
       </div>
       <FeedbackButton url={FEEDBACK_URL} />
+      {showEmailModal && (
+        <EmailCaptureModal
+          chapterId={ch.id}
+          chapterTitle={ch.t}
+          chapterColor={ch.c}
+          playerName={activeProfile.name}
+          onClose={() => { setShowEmailModal(false); goActivity(); }}
+        />
+      )}
     </>
   );
 };
