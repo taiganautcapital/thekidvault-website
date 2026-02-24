@@ -84,15 +84,37 @@ const ChapterPage: NextPage<Props> = ({ chapterIndex }) => {
   const [answered, setAnswered] = useState<number | null>(null);
   const [sideNav, setSideNav] = useState(false);
 
+  const ch = CH[chapterIndex];
+
   useEffect(() => {
     if (hydrated && !activeProfile) {
       router.replace(`/welcome?next=/chapter/${chapterIndex + 1}`);
     }
   }, [hydrated, activeProfile, router, chapterIndex]);
 
-  const ch = CH[chapterIndex];
+if (!hydrated) return (
+  <>
+    <Head>
+      <title>{ch.seoTitle}</title>
+      <meta name="robots" content="index, follow" />
+      <meta name="description" content={ch.seoDesc} />
+      <link rel="canonical" href={`https://www.thekidvault.com/chapter/${ch.id}`} />
+      <meta property="og:title" content={ch.seoTitle} />
+      <meta property="og:description" content={ch.seoDesc} />
+      <meta property="og:url" content={`https://www.thekidvault.com/chapter/${ch.id}`} />
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="The Kid Vault" />
+      <meta property="og:image" content="https://www.thekidvault.com/og-image.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={ch.seoTitle} />
+      <meta name="twitter:description" content={ch.seoDesc} />
+      <meta name="twitter:image" content="https://www.thekidvault.com/og-image.png" />
+    </Head>
+    <div />
+  </>
+);
 
-if (!hydrated || !activeProfile) return (
+if (!activeProfile) return (
   <>
     <Head>
       <title>{ch.seoTitle}</title>
